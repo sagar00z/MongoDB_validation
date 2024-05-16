@@ -32,16 +32,13 @@ const CourseSchema = new mongoose.Schema({
    console.log(save)
  } // creating a data
 
-
-
-//  createCourse()
+  createCourse()
 
  async function getCourse(){
       const courses = await Course.find({rating : {$in : [2.8,4]}}).or([{creator : 'Sagar'},{rating : 1}])
       console.log(courses)
  } // reading a data
-
-//  getCourse()
+  getCourse()
 
 async function updateCourse(id){
       const coursed = await Course.findById(id)
@@ -54,7 +51,7 @@ async function updateCourse(id){
       console.log(updatedCourse)
 
 }
-// updateCourse('6644635adf548af925be61dd') // update data
+ updateCourse('6644635adf548af925be61dd') // update data
 
 
 // delete a data
