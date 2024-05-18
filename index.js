@@ -1,10 +1,10 @@
 const mongoose =require('mongoose');
 
-mongoose.connect('mongodb://127.0.0.1/testDatabase')
+mongoose.connect('mongodb://127.0.0.1/testDatabase') // localhost of Database
 .then(()=>console.log('Connection is successful'))
-.catch(err=>console.error('Connection is failed',err))
+.catch(err=>console.error('Connection is failed',err))  
 
-// Schema
+// Schema in Mongodb
 
 const CourseSchema = new mongoose.Schema({
       name : String,
@@ -16,7 +16,7 @@ const CourseSchema = new mongoose.Schema({
 })
 
 
-// Model 
+// Model of schema
  const Course = mongoose.model('Course', CourseSchema)
 
  async function createCourse(){
